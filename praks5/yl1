@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# skript küsib täisnurkse kolmnurga kahe külje pikkused ja leiab nende põhjal hüpotenuusi pikkuse
+#
+echo
+echo "Sisesta a kylje pikkus:" #kyljepikkus a
+read a
+echo "Sisesta b kylje pikkus:" #kyljepikkus b
+read b
+Hypotenuus=`echo "scale=2; sqrt($a*$a+$b*$b)"|bc` #leian hüpotenuusi pikkuse
+echo "Hüpotenuusi pikkus on $Hypotenuus"
+# skripti lõpp
