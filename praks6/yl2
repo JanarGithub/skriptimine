@@ -10,7 +10,7 @@ bussidearv=$(($reisijatearv / $kohtadearv)) # Mitu täis bussi on vaja.
 jaak=$(($reisijatearv % $kohtadearv)) # Palju on neid, kes ei mahtunud bussile.
 if test $jaak -gt 0
 then
-	bussidearv=$(($bussidearv + 1)) # Liidan busside arvuile ühe juurde.
+	bussidearv=$(($bussidearv + 1)) # Liidan busside arvule ühe juurde.
 fi
 echo "Kokku on vaja $bussidearv täisbussi!"
 echo
