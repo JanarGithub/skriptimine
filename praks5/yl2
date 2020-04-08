@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# skript küsib kasutajalt kolmnurga kolme külje pikkused ja leiab Heroni valemi abil kolmnurga pindala
+#
+echo
+echo "Sisesta a kylje pikkus:"
+read a
+echo "Sisesta b kylje pikkus:"
+read b
+echo "Sisesta c kylje pikkus:"
+read c
+p=`echo "0.5*($a+$b+$c)"|bc` #leian väärtuse p
+s=`echo "sqrt($p*($p-$a)*($p-$b)*($p-$c))"|bc` #leian pindala
+echo "Pindala on $s"
+# skripti lõpp
