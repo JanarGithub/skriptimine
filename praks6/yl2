@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Skript, mis küsib kasutajalt reisijate arvu ja kohtade arvu bussis. Skript väljastab busside arvu, kus kõik reisijad mahuksid bussile.
+echo
+echo "Sisesta reisijate arv: "
+read reisijatearv
+echo "Sisesta kohtade arv bussis: "
+read kohtadearv
+bussidearv=$(($reisijatearv / $kohtadearv)) # Mitu täis bussi on vaja.
+jaak=$(($reisijatearv % $kohtadearv)) # Palju on neid, kes ei mahtunud bussile.
+if test $jaak -gt 0
+then
+	bussidearv=$(($bussidearv + 1)) # Liidan busside arvuile ühe juurde.
+fi
+echo "Kokku on vaja $bussidearv täisbussi!"
+echo
+# Skripti lõpp
