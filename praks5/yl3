@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# skript küsib reisile mineku päeva, reisi pikkuse päevades ja väljastab päeva, millal jõudakse reisilt koju
+#
+echo
+echo "Päevade numbrilised väärtused:"
+echo
+echo "Pühapäev - 0"
+echo "Esmaspäev - 1"
+echo "Teisipäev - 2"
+echo "Kolmapäev - 3"
+echo "Neljapäev - 4"
+echo "Reede - 5"
+echo "Laupäev 6"
+echo
+echo "Sisestage päev, millal lähete reisile:"
+read algus
+echo "Sisestage reisi kestvus päevades:"
+read kestvus
+tehe1=`echo "$kestvus / 7"|bc` #Kui mitu nädalat ollakse reisil. Kui alla 7 päeva, siis väärtuseks 0
+tehe2=`echo "$kestvus - $tehe1 * 7"|bc` #Selle liidan algusele juurde, et leida reisi lõppemise päev
+tehe3=`echo "$algus + $tehe2 - (($algus + $tehe2)/7)*7"|bc` #Vajalik selleks, et reisi lõppemise päeva number ei oleks suurem kui 6
+echo "Tagasi olete päeval nr $tehe3"
