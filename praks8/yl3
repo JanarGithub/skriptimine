@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# Kuu nimetuse väljastamine.
+#
+echo
+echo "Sisesta kuu number: "
+read kuu_nr
+#
+if test $kuu_nr -ge 1 -a $kuu_nr -le 12
+then
+	kuud=(jaanuar veebruar märts aprill mai juuni juuli august september oktoober november detsember)
+	for kuu in 1 2 3 4 5 6 7 8 9 10 11 12
+	do
+		if test $kuu_nr -eq $kuu
+		then
+			echo "See on  ${kuud[$(($kuu - 1))]}"
+			break
+		fi
+	done
+else
+	echo "Sisestasid vale numbri, kuu number on 1-12"
+fi
+# Skripti lõpp.
