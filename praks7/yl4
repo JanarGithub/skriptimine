@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Tervitab kasutajat sõltuvalt kellaajast.
+#
+echo
+aeg=`date | cut -c12-13` # Leian kellaaja.
+kasutaja=`who am i | cut -f1 -d" "` # Leian kasutaja.
+#
+if test $aeg -ge 6 -a $aeg -lt 12 # Kui kell on 6-12, siis...
+then
+        echo "Tere hommikustm, $kasutaja!"
+elif test $aeg -ge 12 -a $aeg -lt 18 # Kui kell on 12-18, siis...
+then
+        echo "Tere päevast, $kasutaja!"
+elif test $aeg -ge 18 -a $aeg -lt 22 # Kui kell on 18-22, siis...
+then
+        echo "Tere õhtust, $kasutaja!"
+elif test $aeg -ge 22 -a $aeg -lt 24 # Kui kell on 22-24, siis...
+then
+        echo "Head ööd, $kasutaja!"
+elif test $aeg -ge 0 -a $aeg -lt 6 # Kui kell on 0-6, siis...
+then
+        echo "Head ööd, $kasutaja!"
+else
+        echo "Vigane kellaaeg!" # Veateade
+fi
+echo
+#
+# Skripti lõpp.
